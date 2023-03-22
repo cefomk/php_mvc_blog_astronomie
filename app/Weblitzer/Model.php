@@ -21,9 +21,10 @@ class Model
     /**
      * @return array => all
      */
-    public static function all()
+    public static function all($param = '')
     {
-        return App::getDatabase()->query("SELECT * FROM ".self::getTable(),get_called_class());
+        // return App::getDatabase()->query("SELECT * FROM ".self::getTable(),get_called_class());
+        return App::getDatabase()->query("SELECT * FROM ".self::getTable(). " " . $param,get_called_class());
     }
 
     public static function findById($id,$columId = 'id')

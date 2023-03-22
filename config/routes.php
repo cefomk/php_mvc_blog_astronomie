@@ -1,10 +1,14 @@
 <?php
 
 $routes = array(
+    //Generique
     array('home','default','index'),
-    // array('trucmuche','default','Page404'),
     array('contact','default','contact'),
+
+    //Blog
     array('blog','blog','listing'),
+    array('article','blog','show',['id']),
+    array('add-article','blog','add'),
 
 
     

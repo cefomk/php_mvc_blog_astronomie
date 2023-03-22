@@ -1,9 +1,12 @@
-<section>
-    <?php foreach ($articles as $article) : ?>
+<section class="tuile">
+<a href="<?= $view->path('add-article')?>" class="btn"><button>Ajouter un article</button></a>
+<?php foreach ($articles as $article) : ?>
         <article>
-            <h4><?= $article->titre ?></h4>
-            <p><img src="<?= $article->image_url?>"></p>
-            <p><?= $article->contenu?></p>
+            <a href="<?= $view->path('article', [$article->id_article]); ?>">
+                <h4>
+                    <?= $article->titre ?>
+                </h4>
+            </a>
         </article>
     <?php endforeach; ?>
 </section>
