@@ -1,6 +1,6 @@
 <section class="tuile">
-<a href="<?= $view->path('add-article')?>" class="btn"><button>Ajouter un article</button></a>
-<?php foreach ($articles as $article) : ?>
+    <a href="<?= $view->path('add-article') ?>"><button class="btn">Ajouter un article</button></a>
+    <?php foreach ($articles as $article) : ?>
         <article>
             <a href="<?= $view->path('article', [$article->id_article]); ?>">
                 <h4>

@@ -1,17 +1,23 @@
 <div class="wrapform">
     <form action="" method="POST" novalidate>
-            <?= $form->label('titre');?>
-            <?= $form->input('titre');?>
-            <?= $form->error('titre');?>
+        <div>
+            <?= $form->label('titre'); ?>
+            <?= $form->input('titre'); ?>
+            <?= $form->error('titre'); ?>
+        </div>
 
-            <?= $form->label('contenu');?>
-            <?= $form->textarea('contenu');?>
-            <?= $form->error('contenu');?>
+        <div>
+            <?= $form->label('contenu'); ?>
+            <?= $form->textarea('contenu'); ?>
+            <?= $form->error('contenu'); ?>
+        </div>
 
-            <?= $form->label('image_url');?>
-            <?= $form->input('image_url');?>
-            <?= $form->error('image_url');?>
+        <div>
+            <?= $form->label('image_url'); ?>
+            <?= $form->input('image_url'); ?>
+            <?= $form->error('image_url'); ?>
+        </div>
 
-            <?= $form->submit('submit','Ajout l\'article');?>
+        <?= $form->submit('submitted', 'Ajout l\'article'); ?>
     </form>
 </div>

@@ -53,7 +53,7 @@ class Validation
             }
         } else {
             if($empty) {
-                $error = 'Veuillez renseigner un ' . $title . '.';
+                $error = 'Veuillez renseigner : ' . $title . '.';
             }
         }
         return $error;
