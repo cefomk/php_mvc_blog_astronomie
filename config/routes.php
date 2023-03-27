@@ -13,6 +13,7 @@ $routes = array(
     array('delete-article', 'blog', 'delete', ['id']),
     array('edit-article', 'blog', 'edit', ['id']),
 
-
+    //Register
+    array('register', 'register', 'add'),
 
 );

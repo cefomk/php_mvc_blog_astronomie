@@ -34,7 +34,7 @@ class Model
 
     public static function findByColumn($column,$value)
     {
-        return App::getDatabase()->prepare("SELECT * FROM " . self::getTable() . " WHERE ".$column." = ?",[$value],get_called_class(),true);
+        App::getDatabase()->prepare("SELECT * FROM " . self::getTable() . " WHERE ".$column." = ?",[$value],get_called_class(),true);
     }
 
     public static function count(){

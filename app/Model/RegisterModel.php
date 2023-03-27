@@ -4,20 +4,22 @@ namespace App\Model;
 
 use App\App;
 use App\Weblitzer\Model;
-use UnderflowException;
 
-class BlogModel extends Model
+class RegisterModel extends Model
 {
-    protected static $table = 'article';
+    protected static $table = 'utilisateur';
 
     public static function insert($post)
     {
+        $mdp = password_hash($post['pwd'],PASSWORD_DEFAULT);
+        
         App::getDatabase()->prepareInsert(
-            'INSERT INTO ' . self::$table . ' (titre,contenu,image_url) VALUE (?,?,?)',
+            'INSERT INTO ' . self::$table . ' (prenom,nom,email,pwd) VALUE (?,?,?)',
             [
-                $post['titre'],
-                $post['contenu'],
-                $post['image_url']
+                $post['prenom'],
+                $post['nom'],
+                $post['email'],
+                $mdp
             ]
         );
     }

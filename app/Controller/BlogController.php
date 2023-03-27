@@ -25,7 +25,6 @@ class BlogController extends Controller
     {
         $errors = [];
         if (!empty($_POST['submitted'])) :
-            
             $post = $this->cleanXss($_POST);
             $validation = new Validation();
             $errors = $this->validBlog($errors, $validation, $post);
