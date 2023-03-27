@@ -43,7 +43,7 @@ class Model
 
     public static function delete($id,$columId = 'id')
     {
-        return App::getDatabase()->prepareInsert("DELETE FROM " . self::getTable() . " WHERE ".$columId." = ?",[$id],get_called_class(),true);
+       return App::getDatabase()->prepareInsert("DELETE FROM " . self::getTable() . " WHERE ".$columId." = ?",[$id],get_called_class(),true);
     }
 
     public function __get($key)

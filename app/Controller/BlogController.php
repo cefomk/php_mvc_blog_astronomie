@@ -49,7 +49,35 @@ class BlogController extends Controller
         return $errors;
     }
 
+    public function delete($id)
+    {
+        BlogModel::delete($id,'id_article');
+        $this->redirect('blog');
+    }
 
+    public function edit($id)
+    {
+        $article = $this->isArticleExistor404($id);
+        $errors = [];
+        if (!empty($_POST['submitted'])) :
+            
+            $post = $this->cleanXss($_POST);
+            $validation = new Validation();
+            $errors = $this->validBlog($errors, $validation, $post);
+            
+            if ($validation->IsValid($errors)) :
+                BlogModel::update($post,$id);
+                $this->redirect('blog');
+            endif;
+
+        endif;
+        $form = new Form($errors);
+        $this->render('app.blog.edit', [
+            'form' => $form, 
+            'article' => $article
+        ]);
+
+    }
 
     public function isArticleExistor404($id)
     {
