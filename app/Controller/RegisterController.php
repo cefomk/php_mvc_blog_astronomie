@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Service\Form;
-use App\Model\BlogModel;
 use App\Service\Validation;
+use App\Model\RegisterModel;
 use App\Weblitzer\Controller;
 
 class RegisterController extends Controller
@@ -18,7 +18,7 @@ class RegisterController extends Controller
             $errors = $this->validRegister($errors, $validation, $post);
             
             if ($validation->IsValid($errors)) :
-                BlogModel::insert($post);
+                RegisterModel::insert($post);
                 $this->redirect('blog');
             endif;
 
@@ -33,16 +33,7 @@ class RegisterController extends Controller
         $errors['prenom'] = $validation->textValid($post['prenom'], 'prenom', 2, 255);
         $errors['nom'] = $validation->textValid($post['nom'], 'nom', 2, 255);
         $errors['email'] = $validation->emailValid($post['email']);
-        $errors['pwd'] = $validation->textValid($post['pwd'], 'pwd', 20, 32);
+        $errors['pwd'] = $validation->textValid($post['pwd'], 'pwd', 8, 32);
         return $errors;
-    }
-
-    public function isUserExistor404($id)
-    {
-        $user = BlogModel::findById($id, 'id_utilisateur');
-        if (empty($user)) :
-            $this->Abort404();
-        endif;
-        return $user;
     }
 }

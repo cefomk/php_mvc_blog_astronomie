@@ -21,7 +21,7 @@
           <li><a href="<?//= $view->path('single2', array(12, 'dedede')); ?>">Single2</a></li> -->
         </ul>
       </nav>
-      <a href="<?= $view->path('register'); ?>" class="btn">Register</a>
+      <a href="<?= $view->path('connexion'); ?>" class="btn">Connexion</a> <a href="<?= $view->path('register'); ?>" class="btn">Register</a>
     </header>
 
     <div class="container">

@@ -228,6 +228,7 @@ font-size: 1rem;
 line-height: 1.1;
 text-align: center;
 cursor: pointer;
+display: block;
 }
 
 .btn-alert {

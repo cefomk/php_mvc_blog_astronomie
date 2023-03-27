@@ -14,7 +14,7 @@ class RegisterModel extends Model
         $mdp = password_hash($post['pwd'],PASSWORD_DEFAULT);
         
         App::getDatabase()->prepareInsert(
-            'INSERT INTO ' . self::$table . ' (prenom,nom,email,pwd) VALUE (?,?,?)',
+            'INSERT INTO ' . self::$table . ' (prenom,nom,email,pwd) VALUE (?,?,?,?)',
             [
                 $post['prenom'],
                 $post['nom'],

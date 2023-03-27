@@ -16,6 +16,8 @@ class Database {
 
     private $pdo;
 
+    private $lastIdInserted;
+
 
     public function __construct($bd_name,$bd_user = 'root',$bd_pass = 'root',$bd_host="localhost")
     {
